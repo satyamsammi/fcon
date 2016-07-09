@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+  <title>{% block pagetitle %} FCON - The best product and services {% endblock %}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name = "viewport" content = "width=device-width, initial-scale = 1">
+  {% load staticfiles %}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"    rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'base/css/my_own.css' %}" type =   "text/css"/>
+  <link rel="stylesheet" href="{% static 'base/css/style.css' %}" type =   "text/css"/>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:900' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  {% include 'material/includes/material_css.html' %}
+  {% block extrahead %}{% endblock %}
+
+</head>
+
+<body>
+<div class="navbar-fixed">
+	<nav>
+   <div class="nav-wrapper  black" id="header">
+    <a id="parallex_headings" href="{% url 'home' %}" class="brand-logo">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFCON</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse white-text"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >HOME</a></li>
+      <li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >ABOUT</a></li>
+      <li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >PROJECTS</a></li>
+	<li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >BLOG</a></li>
+	<li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >SERVICES</a></li>
+	<li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >CONTACTS</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+	<li>
+	<form action="">
+         <div class="input-field white">
+           <input name="search" id="search1" type="search" class="search_text_font align-center flow-text" placeholder="SEARCH" required>
+           <label for="search1"><i class="material-icons">search</i></label>
+           <i class="material-icons">close</i>
+         </div>
+       </form>
+	</li>
+
+	<li><a href="#" class="black-text search_text_font" >HOME</a></li>
+      <li><a href="#" class="black-text search_text_font" >ABOUT</a></li>
+      <li><a href="#" class="black-text search_text_font" >PROJECTS</a></li>
+	<li><a href="#" class="black-text search_text_font" >BLOG</a></li>
+	<li><a href="#" class="black-text search_text_font" >SERVICES</a></li>
+	<li><a href="#" class="black-text search_text_font" >CONTACTS</a></li>
+
+
+      
+    </ul>
+  </div>
+</nav>
+</div>
+
+
+
+{% block content %}
+{% endblock %}
+
+
+<footer style="margin-top:0px" class="page-footer black">
+  
+  <div class="footer-copyright">
+    <div class="container white-text center search_text_font" id="parallex_headaings">FCON — Construction Materials Company © 2016 All rights reserved. Terms of use | Privacy Policy</h6>
+
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+{% include 'material/includes/material_js.html' %}
+<script>
+  $(".button-collapse").sideNav();
+  $('.parallax').parallax();
+</script>
+
+{% block scripts %}{% endblock %}
+{% block basescripts %}{% endblock %}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

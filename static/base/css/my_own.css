@@ -1,0 +1,36 @@
+.search_text_font
+{
+font-family: 'Oswald', sans-serif;
+}
+.addcard{
+			padding: 2%;
+		}
+#parallex_headings
+{
+font-family: 'Titillium Web', sans-serif;
+}
+
+@media only screen 
+and (min-device-width : 800px)
+and (max-device-width: 1600px)  
+{
+ 
+#voyagfaes_pic_div
+{sa
+
+width:100;
+	}
+
+}
+
+@media only screen
+and (min-device-width : 220px) 
+and (max-width : 800px) {
+
+#voyagesas_pic_div{
+height:150px ;
+width:150px;
+
+}  
+}
+

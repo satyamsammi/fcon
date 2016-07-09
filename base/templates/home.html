@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block extrahead %}
+
+{% load material_form %}
+
+{% endblock %}
+
+{% block content %}
+
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+
+	<div style="margin-top:20px" class="row" id="search_box">
+
+	<div class="col s10 m8 l6 offset-l3 offset-m2 offset-s1 ">
+		<nav style="border-radius=10px">
+      <div  class="nav-wrapper white">
+        <form action="">
+         <div class="input-field white">
+           <input name="search" id="search" type="search" class="search_text_font align-center flow-text" placeholder="EXPLORE YOUR NEED" required>
+           <label for="search"><i class="material-icons">search</i></label>
+           <i class="material-icons">close</i>
+         </div>
+       </form>
+     </div>
+   </nav>
+ </div>
+
+</div>
+
+
+
+
+
+        <h3 id="parallex_headings" class="header center white-text text-lighten-2">A quality line of construction<br> products and services<br></h3>
+	<br><br>
+        <div class="row center">
+          <h5 id="parallex_headings" class="header white-text col s12 light">Find top construction products and services in the industry</h5>
+        </div>
+        
+        <br><br>
+
+      </div>
+    </div>
+	
+    <div class="parallax"><img class="responsive-img" src="http://fullhdpictures.com/wp-content/uploads/2016/07/Gorgeous-Construction-Wallpaper.jpg" ></div>
+	
+  </div>
+
+<div>
+	<div class="container">
+		<h3 id="parallex_headings" class="header center flow-text black-text text-lighten-2">WELCOME TO FCON</h3>
+
+	<div class="row">
+		<div class="col s10 m8 l8 offset-l2 offset-m2 offset-s1">
+		<p class="search_text_font">
+		F con has been a well known name in the water industry for a significant period of time, building Sewage treatment plants and water treatment plants for at least 2 decades. We have built many significant structures in the water industry and have been associated with various govt. departments for construction of sewage and water treatment plants .We are well known for our quality and consistence.
+	</p>
+		</div>
+	</div>
+
+
+
+	</div>
+</div>
+
+
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          
+   	</div>
+      </div>
+    </div>
+    <div class="parallax"><img class="responsive-img" src="http://www.top-building-news.com/wp-content/uploads/2010/09/Fiori-Concrete-Batching-Plants.jpg"></div>
+  </div>
+
+
+
+
+<div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons">flash_on</i></h2>
+            <h5 id="parallex_headings" class="center">Looking for some helpful advice?</h5>
+
+            <p class="light search_text_font">Go no further; you've come to the right place. We are professional, experienced and dedicated to your satisfaction. We value your trust!</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons">group</i></h2>
+            <h5 id="parallex_headings" class="center">Thanks for your choice!</h5>
+
+            <p class="light search_text_font">Putting our clients’ interests first, we work hard to exceed your expectations.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons">settings</i></h2>
+            <h5 id="parallex_headings" class="center">Thank you for visiting our site!</h5>
+
+            <p class="light search_text_font">You are at the right place! We are focused on providing integrated solutions and services to customers around the world.
+</p>
+          </div>
+        </div>
+
+	<footer style="margin-top:30px">
+<div style="margin-bottom:0px" class="row">
+<div class="col s6 m6 l6 offset-l3 offset-m3 offset-s3 center">
+<form action="">
+<button style="margin-bottom:30px" class="btn waves-effect waves-light center grey darken-3 search_text_font" type="submit" >SEE ALL SERVICES
+    <i class="material-icons right">send</i>
+  </button>
+</form>
+</div>
+</div>
+</footer>
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+<div class="yellow lighten-2">
+	<div style="padding-top:50px" class="row">
+	{% for p in images %}
+		<div style="height:100;width:100;margin-bottom:20px;border-radius:20px" class="col s10 m10 l6 offset-s1">
+			<img style="border-radius:20px" src="{{ p.image.url }}" class="responsive-img materialboxed">
+		</div>
+	{% endfor %}
+	</div>
+</div>
+
+<div>
+	{% if message %}
+		<div class="chip">
+		    {{ message }} <i class="material-icons">close</i>
+		  </div>
+		{% endif %}
+	<div style="padding-top:80px" class="row">
+		<div class="col s12 m8 l8 offset-l2 offset-m2">
+			<div class="card addcard">
+				
+			<div style="height:400px" id="map" class="card addcard">
+			</div>
+		</div>
+		
+		<div class="col s12 m8 l8 offset-l2 offset-m2">
+		<div class="card addcard">
+			
+		<h3 class="search_text_font" style="text-align:center">Get in touch</h3>
+		<hr>
+			<form method="post" action="">
+				{% csrf_token %}
+				{% form form=contactform %}
+				{% endform %}
+				<button class="btn blue " type="submit" name="submit">Submit</button>
+			</form>
+		</div>
+		</div>
+	</div>
+	
+
+</div>
+
+
+ 
+
+{% endblock %}
+
+
+
+{% block basescripts %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVOI9ZtV8oLhuGtEyDA02xZoZCGvONz2I&callback=mappymappy"async>
+</script>
+<script type="text/javascript">
+function mappymappy(){
+	initMap(28.653724,77.047533);
+}
+var map;
+function initMap(lat,lon) {
+	var myLatLng = {lat: lat, lng: lon};
+	map = new google.maps.Map(document.getElementById('map'), {
+	center: myLatLng,
+	scrollwheel: false,
+	zoom: 12
+	});
+	var marker = new google.maps.Marker({
+	map: map,
+	position: myLatLng,
+	title: 'destination'
+	});
+}
+</script>
+{% endblock %}
+
+
+
+
+
