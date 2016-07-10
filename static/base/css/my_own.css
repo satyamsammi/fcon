@@ -10,27 +10,73 @@ font-family: 'Oswald', sans-serif;
 font-family: 'Titillium Web', sans-serif;
 }
 
+a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #C6E80A url("../images/up-arrow.png") no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+a:hover.back-to-top {
+	background-color: #E8850A;
+}
+
+
 @media only screen 
-and (min-device-width : 800px)
+and (min-device-width : 500px)
 and (max-device-width: 1600px)  
 {
  
-#voyagfaes_pic_div
-{sa
+#carousel_image
+{
+height:600px ;
+width:300px;
+}
 
-width:100;
-	}
+#map
+{
+height:545px;
+}
 
 }
 
 @media only screen
 and (min-device-width : 220px) 
-and (max-width : 800px) {
+and (max-width : 500px) {
 
-#voyagesas_pic_div{
-height:150px ;
-width:150px;
+#carousel_image
+{
+height:250px ;
+width:250px;
 
-}  
 }
+
+#map
+{
+height:300px;
+}
+  
+}
+
+
+#corousel_div
+{
+border-radius:15px;
+background:url("../images/corousel_div.jpg");
+background-size: 100% 100%;
+background-repeat: no-repeat;
+
+}
+
+
+
+
+
 

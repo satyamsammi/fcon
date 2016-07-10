@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block extrahead %}
+
 
 {% load material_form %}
 
-{% endblock %}
+
 
 {% block content %}
+
+{% if message %}
+		<div class="chip">
+		    {{ message }} <i class="material-icons">close</i>
+		  </div>
+		{% endif %}
 
 <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
@@ -46,7 +52,7 @@
       </div>
     </div>
 	
-    <div class="parallax"><img class="responsive-img" src="http://fullhdpictures.com/wp-content/uploads/2016/07/Gorgeous-Construction-Wallpaper.jpg" ></div>
+    <div class="parallax"><img class="responsive-img" src="{% static 'base/images/newfile.jpg' %}" ></div>
 	
   </div>
 
@@ -90,7 +96,7 @@
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center black-text"><i class="material-icons">flash_on</i></h2>
+            <h2 class="center lime-text text-accent-3"><i class="material-icons">flash_on</i></h2>
             <h5 id="parallex_headings" class="center">Looking for some helpful advice?</h5>
 
             <p class="light search_text_font">Go no further; you've come to the right place. We are professional, experienced and dedicated to your satisfaction. We value your trust!</p>
@@ -99,7 +105,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center black-text"><i class="material-icons">group</i></h2>
+            <h2 class="center lime-text text-accent-3"><i class="material-icons">group</i></h2>
             <h5 id="parallex_headings" class="center">Thanks for your choice!</h5>
 
             <p class="light search_text_font">Putting our clients’ interests first, we work hard to exceed your expectations.</p>
@@ -108,7 +114,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center black-text"><i class="material-icons">settings</i></h2>
+            <h2 class="center lime-text text-accent-3"><i class="material-icons">favorite</i></h2>
             <h5 id="parallex_headings" class="center">Thank you for visiting our site!</h5>
 
             <p class="light search_text_font">You are at the right place! We are focused on providing integrated solutions and services to customers around the world.
@@ -135,40 +141,95 @@
   </div>
 
 
-<div class="yellow lighten-2">
-	<div style="padding-top:50px" class="row">
-	{% for p in images %}
-		<div style="height:100;width:100;margin-bottom:20px;border-radius:20px" class="col s10 m10 l6 offset-s1">
-			<img style="border-radius:20px" src="{{ p.image.url }}" class="responsive-img materialboxed">
-		</div>
-	{% endfor %}
+<div id="corousel_div" class="lighten-2">
+
+	<h2 id="parallex_headings" style="padding-top:40px" class="header center flow-text cyan-text text-lighten-2">WIDE RANGE OF PRODUCTS</h2>
+
+	<div style="padding-bottom:40px" class="row">
+
+
+
+	{% if images %}
+			<div class="carousel ">
+			{% for i in images %}
+			<a class="carousel-item" href="#">
+			<div id="carousel_image">
+				<img style="border-radius:10px" src="{{ i.image.url }}" >
+					
+				</div>	
+
+			
+			</a>
+			{% endfor %}
+			</div>
+		{% else %}
+		<p>No Images Right Now</p>
+		{% endif %}
+	
 	</div>
 </div>
 
-<div>
-	{% if message %}
-		<div class="chip">
-		    {{ message }} <i class="material-icons">close</i>
-		  </div>
-		{% endif %}
-	<div style="padding-top:80px" class="row">
-		<div class="col s12 m8 l8 offset-l2 offset-m2">
+
+	<div id="contact_us" style="padding-top:0px" class="row">
+
+	<h1 id="parallex_headings" style="padding-top:70px" class="header center flow-text black-text text-lighten-2">Contact information</h1>
+
+	<div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center lime-text text-accent-3"><i class="material-icons">location_on</i></h2>
+            
+
+            <p class="light center search_text_font">B-30, Ranhola - Nilothi Rd, Amritapuri, Nilothi Village, Nilothi, New Delhi, Delhi 110041</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center lime-text text-accent-3"><i class="material-icons">phone</i></h2>
+            
+
+            <p class="light center search_text_font">N/A</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center lime-text text-accent-3"><i class="material-icons">email</i></h2>
+            
+
+            <p class="light center search_text_font">fccltd@xyz.com</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+		<div class="col s12 m6 l6 ">
 			<div class="card addcard">
 				
-			<div style="height:400px" id="map" class="card addcard">
+			<div id="map" class="card addcard">
+			</div>
 			</div>
 		</div>
 		
-		<div class="col s12 m8 l8 offset-l2 offset-m2">
-		<div class="card addcard">
+		<div class="col s12 m6 l6">
+		<div class="card addcard yellow lighten-2">
 			
-		<h3 class="search_text_font" style="text-align:center">Get in touch</h3>
+		<h3 class="search_text_font blue-text text-accent-3" style="text-align:center">Get in touch</h3>
+		<p class="search_text_font blue-text text-accent-3">If you have any questions, drop us a line</p>
 		<hr>
-			<form method="post" action="">
+			<form method="post" action="#">
 				{% csrf_token %}
 				{% form form=contactform %}
 				{% endform %}
+				<div style="text-align:center">
 				<button class="btn blue " type="submit" name="submit">Submit</button>
+				</div>
 			</form>
 		</div>
 		</div>
@@ -178,6 +239,8 @@
 </div>
 
 
+
+
  
 
 {% endblock %}
@@ -185,6 +248,9 @@
 
 
 {% block basescripts %}
+<script>
+$('.carousel').carousel();
+</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVOI9ZtV8oLhuGtEyDA02xZoZCGvONz2I&callback=mappymappy"async>
 </script>
 <script type="text/javascript">

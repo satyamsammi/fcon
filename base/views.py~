@@ -30,6 +30,7 @@ def home(request):
 		form = ContactForm()
 	else:
 		form = ContactForm(request.POST)
+		data['contactform'] = form
 		if form.is_valid():
 			data['message'] = 'Your enquiry is submitted successfully, soon our team member will contact you.'
 			subject = 'New Query in Travel Website'

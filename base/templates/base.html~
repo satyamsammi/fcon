@@ -11,31 +11,40 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"    rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{% static 'base/css/my_own.css' %}" type =   "text/css"/>
+  <link rel="stylesheet" href="{% static 'base/css/materialize.min.css' %}" type =   "text/css"/>
   <link rel="stylesheet" href="{% static 'base/css/style.css' %}" type =   "text/css"/>
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:900' rel='stylesheet' type='text/css'>
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-  {% include 'material/includes/material_css.html' %}
+  
   {% block extrahead %}{% endblock %}
 
 </head>
 
 <body>
+
+
+
+
+
+
+
+
 <div class="navbar-fixed">
 	<nav>
    <div class="nav-wrapper  black" id="header">
-    <a id="parallex_headings" href="{% url 'home' %}" class="brand-logo">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFCON</a>
+    <a href="{% url 'home' %}" id="parallex_headings" class="brand-logo white-text">&nbsp&nbsp&nbsp&nbsp&nbspF CON</a>
     <a href="#" data-activates="mobile-demo" class="button-collapse white-text"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >HOME</a></li>
-      <li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >ABOUT</a></li>
+      <li><a href="{% url 'home' %}" id="parallex_headings" class="waves-effect yellow-text" >HOME</a></li>
+      <li><a href="{% url 'about' %}" id="parallex_headings" class="waves-effect yellow-text" >ABOUT</a></li>
       <li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >PROJECTS</a></li>
 	<li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >BLOG</a></li>
 	<li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >SERVICES</a></li>
-	<li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >CONTACTS</a></li>
+	<li><a href="#contact_us" id="parallex_headings" class="waves-effect yellow-text" >CONTACTS</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
 	<li>
-	<form action="">
+	<form action="#">
          <div class="input-field white">
            <input name="search" id="search1" type="search" class="search_text_font align-center flow-text" placeholder="SEARCH" required>
            <label for="search1"><i class="material-icons">search</i></label>
@@ -43,20 +52,35 @@
          </div>
        </form>
 	</li>
-
-	<li><a href="#" class="black-text search_text_font" >HOME</a></li>
-      <li><a href="#" class="black-text search_text_font" >ABOUT</a></li>
+	<li><a href="{% url 'home' %}" class="black-text search_text_font" >HOME</a></li>
+      <li><a href="{% url 'about' %}" class="black-text search_text_font" >ABOUT</a></li>
       <li><a href="#" class="black-text search_text_font" >PROJECTS</a></li>
 	<li><a href="#" class="black-text search_text_font" >BLOG</a></li>
 	<li><a href="#" class="black-text search_text_font" >SERVICES</a></li>
-	<li><a href="#" class="black-text search_text_font" >CONTACTS</a></li>
+	<li><a href="#contact_us" class="black-text search_text_font" >CONTACTS</a></li>
 
 
-      
+
     </ul>
   </div>
 </nav>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -77,16 +101,38 @@
 
 
 
-
-
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-{% include 'material/includes/material_js.html' %}
+<script type="text/javascript" src="{% static 'base/js/materialize.min.js' %}"></script>
 <script>
   $(".button-collapse").sideNav();
   $('.parallax').parallax();
 </script>
 
-{% block scripts %}{% endblock %}
+
+<script type="text/javascript">
+// create the back to top button
+$('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
+
+var amountScrolled = 300;
+
+$(window).scroll(function() {
+	if ( $(window).scrollTop() > amountScrolled ) {
+		$('a.back-to-top').fadeIn('slow');
+	} else {
+		$('a.back-to-top').fadeOut('slow');
+	}
+});
+
+$('a.back-to-top, a.simple-back-to-top').click(function() {
+	$('html, body').animate({
+		scrollTop: 0
+	}, 700);
+	return false;
+});
+</script>
+
+
+
 {% block basescripts %}{% endblock %}
 
 </body>

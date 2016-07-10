@@ -1,0 +1,51 @@
+#our_vision_div
+{
+background:url("../images/our_vision.jpg");
+background-size: 100% 100%;
+background-repeat: no-repeat;
+}
+
+#our_vision_div2
+{
+background:url("../images/our_vision2.jpg");
+background-size: 100% 100%;
+background-repeat: no-repeat;
+}
+
+#back1
+{
+background:url("../images/back1.jpg");
+background-size: 100% 100%;
+background-repeat: no-repeat;
+height:320px;
+opacity:0.9;
+}
+
+#back2
+{
+border-radius:15px;
+background:url("../images/back2.jpg");
+background-size: 100% 100%;
+background-repeat: no-repeat;
+height:320px;
+opacity:0.9;
+}
+
+#back3
+{
+background:url("../images/back3.jpg");
+background-size: 100% 100%;
+background-repeat: no-repeat;
+height:320px;
+opacity:0.9;
+}
+
+#back4
+{
+background:url("../images/back4.jpg");
+background-size: 100% 100%;
+background-repeat: no-repeat;
+height:320px;
+opacity:0.9;
+}
+
