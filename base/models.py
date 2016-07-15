@@ -36,14 +36,4 @@ class Review(models.Model):
 	def __str__(self):
 		return str(self.title)
 
-def reviewphotoname(instance,filename):
-	ext = filename.split('.')[-1]
-	name = filename.split('.')[0]
-	x = instance.review.title.strip()
-	return 'review/'+x+'/images/'+name+'.'+ext
 
-class ReviewImages(models.Model):
-	review = models.ForeignKey(Review)
-	image = models.ImageField(upload_to = reviewphotoname)
-	def __str__(self):
-		return "%s %s" %(self.review.title, self.id)

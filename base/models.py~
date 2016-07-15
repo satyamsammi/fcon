@@ -2,6 +2,12 @@ from django.db import models
 REVIEW_CHOICES = (('5', 'Very Good'), ('4', 'Good'),('3', 'Average'),('2', 'Poor'), ('1','Very Poor'))
 # Create your models here.
 
+def productphotoname(instance,filename):
+	ext = filename.split('.')[-1]
+	name = filename.split('.')[0]
+	return str('products/'+instance.title+'/images/'+name+'.'+ext)
+
+
 class HomeImages(models.Model):
 	image = models.ImageField(upload_to="home/")
 	def __str__(self):
@@ -16,10 +22,6 @@ class Product(models.Model):
 	def __str__(self):
 		return "%s" %(self.title)
 
-def productphotoname(instance,filename):
-	ext = filename.split('.')[-1]
-	name = filename.split('.')[0]
-	return str('products/'+instance.title+'/images/'+name+'.'+ext)
 
 
 class Review(models.Model):
@@ -34,14 +36,4 @@ class Review(models.Model):
 	def __str__(self):
 		return str(self.title)
 
-def reviewphotoname(instance,filename):
-	ext = filename.split('.')[-1]
-	name = filename.split('.')[0]
-	x = instance.review.title.strip()
-	return 'review/'+x+'/images/'+name+'.'+ext
 
-class ReviewImages(models.Model):
-	review = models.ForeignKey(Review)
-	image = models.ImageField(upload_to = reviewphotoname)
-	def __str__(self):
-		return "%s %s" %(self.review.title, self.id)

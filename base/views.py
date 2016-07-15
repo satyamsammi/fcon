@@ -23,7 +23,7 @@ def home(request):
 	for i in blogs:
 		b = {}
 		b['blog'] = i
-		b['images'] = ReviewImages.objects.filter(review = i)
+		
 		bloglist.append(b)
 	data['blogs'] = bloglist
 	if request.method == 'GET':

@@ -46,3 +46,9 @@ def home(request):
 	data['contactform'] = form
 	print(data)
 	return render(request, 'home.html',data)
+def about(request):
+	data = {}
+	return render(request,'about.html',data)
+
+
+

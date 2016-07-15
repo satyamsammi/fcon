@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name = "viewport" content = "width=device-width, initial-scale = 1">
   {% load staticfiles %}
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"    rel="stylesheet">
+  
   <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{% static 'base/css/my_own.css' %}" type =   "text/css"/>
   <link rel="stylesheet" href="{% static 'base/css/materialize.min.css' %}" type =   "text/css"/>
@@ -38,7 +38,7 @@
       <li><a href="{% url 'home' %}" id="parallex_headings" class="waves-effect yellow-text" >HOME</a></li>
       <li><a href="{% url 'about' %}" id="parallex_headings" class="waves-effect yellow-text" >ABOUT</a></li>
       <li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >PROJECTS</a></li>
-	<li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >BLOG</a></li>
+	<li><a href="{% url 'blog-home' %}" id="parallex_headings" class="waves-effect yellow-text" >TESTIMONIAL</a></li>
 	<li><a href="#" id="parallex_headings" class="waves-effect yellow-text" >SERVICES</a></li>
 	<li><a href="{% url 'home' %}#contact_us" id="parallex_headings" class="waves-effect yellow-text" >CONTACTS</a></li>
     </ul>
@@ -55,7 +55,7 @@
 	<li><a href="{% url 'home' %}" class="black-text search_text_font" >HOME</a></li>
       <li><a href="{% url 'about' %}" class="black-text search_text_font" >ABOUT</a></li>
       <li><a href="#" class="black-text search_text_font" >PROJECTS</a></li>
-	<li><a href="#" class="black-text search_text_font" >BLOG</a></li>
+	<li><a href="{% url 'blog-home' %}" class="black-text search_text_font" >TESTIMONIAL</a></li>
 	<li><a href="#" class="black-text search_text_font" >SERVICES</a></li>
 	<li><a href="{% url 'home' %}#contact_us" class="black-text search_text_font" >CONTACTS</a></li>
 

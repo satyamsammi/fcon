@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block pagetitle %} F CON | Add Testimonial {% endblock %}
+{% load material_form %}
+
+
+{% block content %}
+	<div class="container">
+	<div class="card addcard">
+		<h5 class="search_text_font" style="text-align:center">Add Testimonial</h5>
+		<hr>
+		<form method="post" action="{% url 'blog-add' %}" enctype="form-data">
+			{% csrf_token %}
+			{% form %}
+			
+			{% endform %}
+					<button type="submit" name="add-blog" class="btn">Add Blog</button>
+		</form>
+	</div>
+	</div>
+{% endblock %}        
